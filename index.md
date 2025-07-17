@@ -12,4 +12,4 @@ layout: home
 
 Welcome to my homepage!
 
-爱发电主页：[https://afdian.net/a/haksrpd](https://afdian.net/a/haksrpd)
+爱发电主页：[https://afdian.com/a/haksrpd](https://afdian.com/a/haksrpd)

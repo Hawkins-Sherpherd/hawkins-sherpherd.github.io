@@ -5,7 +5,7 @@ ref: contact
 order: 3
 ---
 
-**电子邮箱：**haksrpd@outlook.com, haksrpd@sherpherd.top
+**电子邮箱：**haksrpd@outlook.com, haksrpd@sherpherd.net
 
 **PGP 公钥指纹：**29E5 0791 9AAA 2EBA C209  658E A79D 5869 700B C8BE
 
@@ -17,7 +17,7 @@ order: 3
 
 ---
 
-**Email:** haksrpd@outlook.com, haksrpd@sherpherd.top
+**Email:** haksrpd@outlook.com, haksrpd@sherpherd.net
 
 **PGP public key fingerprint:** 29E5 0791 9AAA 2EBA C209  658E A79D 5869 700B C8BE
 
