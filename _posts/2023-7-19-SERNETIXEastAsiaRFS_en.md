@@ -7,4 +7,4 @@ By July 19, 2023, the route servers (RS1 & RS2) and N2N network of SERNET-IX Eas
 
 Fill peering request here：[https://forms.gle/kyWftkDvbGwzTC5W6](https://forms.gle/kyWftkDvbGwzTC5W6)
 
-For more information, please refer：[https://blog.sherpherd.net/ix.html](https://blog.sherpherd.net/ix.html)
+For more information, please refer：[/ix.html](/ix.html)

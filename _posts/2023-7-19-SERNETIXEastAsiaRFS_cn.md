@@ -7,4 +7,4 @@ title: SERNET-IX 东亚区域已投入服务
 
 此处填写对等连接信息：[https://forms.gle/kyWftkDvbGwzTC5W6](https://forms.gle/kyWftkDvbGwzTC5W6)
 
-更多信息，请参阅：[https://blog.sherpherd.net/ix.html](https://blog.sherpherd.net/ix.html)
+更多信息，请参阅：[/ix.html](/ix.html)

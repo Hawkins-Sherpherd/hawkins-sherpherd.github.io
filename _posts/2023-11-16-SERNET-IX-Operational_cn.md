@@ -17,7 +17,7 @@ title: SERNET-IX 各新旧区域上线
 
 * 节点位置
 
-我可能会因为某些原因拒绝你的互联请求，但大多数情况下我会接受任何没有违反协议的互联请求，参见 [https://blog.sherpherd.net/Agreement_SERNET_IX_cn.html](https://blog.sherpherd.net/Agreement_SERNET_IX_cn.html)
+我可能会因为某些原因拒绝你的互联请求，但大多数情况下我会接受任何没有违反协议的互联请求，参见 [/Agreement_SERNET_IX_cn.html](/Agreement_SERNET_IX_cn.html)
 
 当我接受你的互联请求后，我会发这些信息回来给你：
 
@@ -27,4 +27,4 @@ title: SERNET-IX 各新旧区域上线
 
 * 路由服务器的 IXP 网络地址
 
-更多信息，请参阅：[https://blog.sherpherd.net/ix.html](https://blog.sherpherd.net/ix.html)
+更多信息，请参阅：[/ix.html](/ix.html)

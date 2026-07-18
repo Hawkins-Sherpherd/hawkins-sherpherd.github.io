@@ -5,4 +5,4 @@ title: New Nodes Online
 
 Shanghai and New York (NJ) node has online, now ready for peering.
 
-[Node Information](https://blog.sherpherd.net/dn42.html)
+[Node Information](/dn42.html)

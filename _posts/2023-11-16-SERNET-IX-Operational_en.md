@@ -17,7 +17,7 @@ For a peering request, you need to provide:
 
 * Node Location
 
-I MAY refuse your peering request for some reason, but in most cases, I will accept any peering request not violating agreement, please refer [https://blog.sherpherd.net/Agreement_SERNET_IX_en.html](https://blog.sherpherd.net/Agreement_SERNET_IX_en.html)
+I MAY refuse your peering request for some reason, but in most cases, I will accept any peering request not violating agreement, please refer [/Agreement_SERNET_IX_en.html](/Agreement_SERNET_IX_en.html)
 
 After I accept your peering request, I'll send you back those information:
 
@@ -27,4 +27,4 @@ After I accept your peering request, I'll send you back those information:
 
 * RS IXP Network Addresses
 
-For more information, please refer: [https://blog.sherpherd.net/ix.html](https://blog.sherpherd.net/ix.html)
+For more information, please refer: [/ix.html](/ix.html)
