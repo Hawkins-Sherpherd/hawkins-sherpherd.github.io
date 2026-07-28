@@ -9,7 +9,7 @@ const loc_ctu = [30.659462, 104.065735];
 const loc_sin = [1.283333, 103.833333];
 const loc_het = [40.8421, 111.7503];
 const loc_wds = [32.6295, 110.7983];
-const loc_cgk = [-6.18, 106.83];
+// const loc_cgk = [-6.18, 106.83];
 const loc_dfw = [32.7792, -96.8089];
 const loc_azj = [32.188, 119.428];
 const loc_lhr = [51.5072, -0.1275];
@@ -40,7 +40,7 @@ const blackIcon  = createColoredIcon('black');
 
 // ── Node definitions ───────────────────────────────────────
 const nodeDefs = [
-    { id: 'hkg', lat: loc_hkg[0], lng: loc_hkg[1], popup: "<b>DN42:</b> hkg1.sherpherd.dn42<br><b>Clearnet:</b> hkg1.sherpherd.net<br><b>Location:</b> Hong Kong, China<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br><hr><b><s>DN42:</b> hk2.sherpherd.dn42<br><b>Clearnet:</b> hk2.sherpherd.net<br><b>Location:</b> Hong Kong, China<br><b>Bandwidth:</b> 300Mbps<br><br><b>MPLS Enabled</b><br></s><hr><b>DN42:</b> hkg3.sherpherd.dn42<br><b>Clearnet:</b> hkg3.sherpherd.net<br><b>Location:</b> Hong Kong, China<br><b>Bandwidth:</b> 300Mbps<br><br><b>MPLS Enabled</b><br><b>Not open for peering due to UDP block</b>" },
+    { id: 'hkg', lat: loc_hkg[0], lng: loc_hkg[1], popup: "<b>DN42:</b> hkg1.sherpherd.dn42<br><b>Clearnet:</b> hkg1.sherpherd.net<br><b>Location:</b> Hong Kong, China<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'sjc', lat: loc_sjc[0], lng: loc_sjc[1], popup: "<b>DN42:</b> sjc1.sherpherd.dn42<br><b>Clearnet:</b> sjc1.sherpherd.net<br><b>Location:</b> San Jose, CA, United States<br><b>Bandwidth:</b> 10Gbps<br><br><b>MPLS Enabled</b><br><hr><b>DN42:</b> scix-us.sherpherd.dn42<br><b>Clearnet:</b> scix-us.sherpherd.net<br><b>Location:</b> San Jose, CA, United States<br><b>Bandwidth:</b> 1Gbps<br><br><b>SCIX Node</b>, encouraged to peer through SCIX LAN" },
     { id: 'fra', lat: loc_fra[0], lng: loc_fra[1], popup: "<b>DN42:</b> fra1.sherpherd.dn42<br><b>Clearnet:</b> fra1.sherpherd.net<br><b>Location:</b> Frankfurt, Germany<br><b>Bandwidth:</b> 10Gbps<br><br><b>MPLS Enabled</b><br><hr><b>DN42:</b> yukisino-ix-de.sherpherd.dn42<br><b>Clearnet:</b> N/A<br><b>Location:</b> Frankfurt, Germany<br><b>Bandwidth:</b> 1Gbps<br>" },
     { id: 'buf', lat: loc_buf[0], lng: loc_buf[1], popup: "<b>DN42:</b> buf1.sherpherd.dn42<br><b>Clearnet:</b> buf1.sherpherd.net<br><b>Location:</b> Buffalo, NY, United States<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br>" },
@@ -50,7 +50,7 @@ const nodeDefs = [
     { id: 'tyo', lat: loc_tyo[0], lng: loc_tyo[1], popup: "<b>DN42:</b> tyo1.sherpherd.dn42<br><b>Clearnet:</b> tyo1.sherpherd.net<br><b>Location:</b> Tokyo, Japan<br><b>Bandwidth:</b> 2.5Gbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'sin', lat: loc_sin[0], lng: loc_sin[1], popup: "<b>DN42:</b> sin1.sherpherd.dn42<br><b>Clearnet:</b> sin1.sherpherd.net<br><b>Location:</b> Singapore<br><b>Bandwidth:</b> 5Gbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'wds', lat: loc_wds[0], lng: loc_wds[1], popup: "<b>DN42:</b> wds1.sherpherd.dn42<br><b>Clearnet:</b> wds1.sherpherd.net<br><b>Location:</b> Shiyan, Hubei, China<br><b>Bandwidth:</b> 15Mbps<br><br><b>MPLS Enabled</b><br>" },
-    { id: 'cgk', lat: loc_cgk[0], lng: loc_cgk[1], popup: "<b>DN42:</b> cgk1.sherpherd.dn42<br><b>Clearnet:</b> cgk1.sherpherd.net<br><b>Location:</b> Jakarta, Indonesia<br><b>Bandwidth:</b> 200Mbps<br><br>" },
+//    { id: 'cgk', lat: loc_cgk[0], lng: loc_cgk[1], popup: "<b>DN42:</b> cgk1.sherpherd.dn42<br><b>Clearnet:</b> cgk1.sherpherd.net<br><b>Location:</b> Jakarta, Indonesia<br><b>Bandwidth:</b> 200Mbps<br><br>" },
     { id: 'azj', lat: loc_azj[0], lng: loc_azj[1], popup: "<b>DN42:</b> azj1.sherpherd.dn42<br><b>Clearnet:</b> azj1.sherpherd.net<br><b>Location:</b> Zhenjiang, Jiangsu, China<br><b>Bandwidth:</b> 30Mbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'lhr', lat: loc_lhr[0], lng: loc_lhr[1], popup: "<b>DN42:</b> lhr1.sherpherd.dn42<br><b>Clearnet:</b> lhr1.sherpherd.net<br><b>Location:</b> London, United Kingdom<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br>" }
 ];
@@ -77,7 +77,7 @@ var linkDefs = [
     { from: 'ctu', to: 'wds', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CTU1 == WDS1<br><b>Estimated RTT Latency:</b> 50ms" },
     { from: 'sjc', to: 'dfw', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == DFW1<br><b>Estimated RTT Latency:</b> 55ms" },
     { from: 'dfw', to: 'buf', style: {opacity: 0.8}, popup: "<b>Link Name: </b>DFW1 == BUF1<br><b>Estimated RTT Latency:</b> 90ms" },
-    { from: 'sin', to: 'cgk', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == CGK1<br><b>Estimated RTT Latency:</b> 15ms" },
+//    { from: 'sin', to: 'cgk', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == CGK1<br><b>Estimated RTT Latency:</b> 15ms" },
     { from: 'wds', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>WDS1 == AZJ1<br><b>Estimated RTT Latency:</b> 40ms" },
     { from: 'ctu', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CTU1 == AZJ1<br><b>Estimated RTT Latency:</b> 50ms" },
     { from: 'can', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == AZJ1<br><b>Estimated RTT Latency:</b> 35ms" },
