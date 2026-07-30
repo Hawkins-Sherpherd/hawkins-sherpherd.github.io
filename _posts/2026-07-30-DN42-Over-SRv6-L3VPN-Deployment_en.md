@@ -14,7 +14,7 @@ Compared to other routing technologies, Segment Routing offers following advanta
 The following is a comparison of some popular routing technologies:
 
 |Name|Simple|Scalable|Traffic Engineering|Extinguish of BGP blackhole|
-| ----- | ----- | ----- | ----- | ----- | ----- |
+| ----- | ----- | ----- | ----- | ----- |
 |Plain IPv4/IPv6|Yes|Medium|No|No|
 |MPLS and LDP|No|Medium|No|Yes|
 |MPLS and RSVP-TE|No|Low|Yes|Yes|
