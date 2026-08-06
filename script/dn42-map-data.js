@@ -9,10 +9,11 @@ const loc_ctu = [30.659462, 104.065735];
 const loc_sin = [1.283333, 103.833333];
 const loc_het = [40.8421, 111.7503];
 const loc_wds = [32.6295, 110.7983];
-// const loc_cgk = [-6.18, 106.83];
+const loc_cgk = [-6.18, 106.83];
 const loc_dfw = [32.7792, -96.8089];
 const loc_azj = [32.188, 119.428];
 const loc_lhr = [51.5072, -0.1275];
+const loc_jnb = [-26.204444, 28.045556];
 
 // ── Leaflet colored marker icons (from pointhi/leaflet-color-markers) ──
 const _markerIconBase = 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/';
@@ -50,9 +51,10 @@ const nodeDefs = [
     { id: 'tyo', lat: loc_tyo[0], lng: loc_tyo[1], popup: "<b>DN42:</b> tyo1.sherpherd.dn42<br><b>Clearnet:</b> tyo1.sherpherd.net<br><b>Location:</b> Tokyo, Japan<br><b>Bandwidth:</b> 2.5Gbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'sin', lat: loc_sin[0], lng: loc_sin[1], popup: "<b>DN42:</b> sin1.sherpherd.dn42<br><b>Clearnet:</b> sin1.sherpherd.net<br><b>Location:</b> Singapore<br><b>Bandwidth:</b> 5Gbps<br><br><b>MPLS Enabled</b><br>" },
     { id: 'wds', lat: loc_wds[0], lng: loc_wds[1], popup: "<b>DN42:</b> wds1.sherpherd.dn42<br><b>Clearnet:</b> wds1.sherpherd.net<br><b>Location:</b> Shiyan, Hubei, China<br><b>Bandwidth:</b> 15Mbps<br><br><b>MPLS Enabled</b><br>" },
-//    { id: 'cgk', lat: loc_cgk[0], lng: loc_cgk[1], popup: "<b>DN42:</b> cgk1.sherpherd.dn42<br><b>Clearnet:</b> cgk1.sherpherd.net<br><b>Location:</b> Jakarta, Indonesia<br><b>Bandwidth:</b> 200Mbps<br><br>" },
+    { id: 'cgk', lat: loc_cgk[0], lng: loc_cgk[1], popup: "<b>DN42:</b> cgk1.sherpherd.dn42<br><b>Clearnet:</b> cgk1.sherpherd.net<br><b>Location:</b> Jakarta, Indonesia<br><b>Bandwidth:</b> 200Mbps<br>" },
     { id: 'azj', lat: loc_azj[0], lng: loc_azj[1], popup: "<b>DN42:</b> azj1.sherpherd.dn42<br><b>Clearnet:</b> azj1.sherpherd.net<br><b>Location:</b> Zhenjiang, Jiangsu, China<br><b>Bandwidth:</b> 30Mbps<br><br><b>MPLS Enabled</b><br>" },
-    { id: 'lhr', lat: loc_lhr[0], lng: loc_lhr[1], popup: "<b>DN42:</b> lhr1.sherpherd.dn42<br><b>Clearnet:</b> lhr1.sherpherd.net<br><b>Location:</b> London, United Kingdom<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br>" }
+    { id: 'lhr', lat: loc_lhr[0], lng: loc_lhr[1], popup: "<b>DN42:</b> lhr1.sherpherd.dn42<br><b>Clearnet:</b> lhr1.sherpherd.net<br><b>Location:</b> London, United Kingdom<br><b>Bandwidth:</b> 1Gbps<br><br><b>MPLS Enabled</b><br>" },
+    { id: 'jnb', lat: loc_jnb[0], lng: loc_jnb[1], popup: "<b>DN42:</b> jnb1.sherpherd.dn42<br><b>Clearnet:</b> jnb1.sherpherd.net<br><b>Location:</b> Johannesburg, South Africa<br><b>Bandwidth:</b> 1Gbps<br>"}
 ];
 
 function nodeById(id) { return nodeDefs.find(function(n) { return n.id === id; }); }
@@ -62,22 +64,23 @@ var linkDefs = [
     { from: 'sjc', to: 'buf', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == BUF1<br><b>Estimated RTT Latency:</b> 56ms" },
     { from: 'buf', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>BUF1 == FRA1<br><b>Estimated RTT Latency:</b> 130ms" },
     { from: 'can', to: 'tyo', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == TYO1<br><b>Estimated RTT Latency:</b> 180ms" },
-    { from: 'can', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == HKG1<br><b>Estimated RTT Latency:</b> 80ms<hr><b>Link Name: </b>CAN1 == HKG3<br><b>Estimated RTT Latency:</b> 40ms" },
-    { from: 'sjc', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == HKG1<br><b>Estimated RTT Latency:</b> 160ms<hr><b>Link Name: </b>SJC1 == HKG2<br><b>Estimated RTT Latency:</b> 150ms" },
+    { from: 'can', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == HKG1<br><b>Estimated RTT Latency:</b> 80ms" },
+    { from: 'sjc', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == HKG1<br><b>Estimated RTT Latency:</b> 160ms" },
     { from: 'sjc', to: 'tyo', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == TYO1<br><b>Estimated RTT Latency:</b> 105ms" },
-    { from: 'hkg', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>HKG1 == FRA1<br><b>Estimated RTT Latency:</b> 190ms<hr><b>Link Name: </b>HKG2 == FRA1<br><b>Estimated RTT Latency:</b> 180ms" },
+    { from: 'hkg', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>HKG1 == FRA1<br><b>Estimated RTT Latency:</b> 190ms" },
     { from: 'can', to: 'sjc', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == SJC1<br><b>Estimated RTT Latency:</b> 180ms" },
-    { from: 'hkg', to: 'tyo', style: {opacity: 0.8}, popup: "<b>Link Name: </b>HKG1 == TYO1<br><b>Estimated RTT Latency:</b> 50ms<hr><b>Link Name: </b>HKG2 == TYO1<br><b>Estimated RTT Latency:</b> 50ms<hr><b>Link Name: </b>HKG3 == TYO1<br><b>Estimated RTT Latency:</b> 50ms" },
+    { from: 'hkg', to: 'tyo', style: {opacity: 0.8}, popup: "<b>Link Name: </b>HKG1 == TYO1<br><b>Estimated RTT Latency:</b> 50ms" },
     { from: 'can', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == FRA1<br><b>Estimated RTT Latency:</b> 200ms" },
     { from: 'ctu', to: 'can', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CTU1 == CAN1<br><b>Estimated RTT Latency:</b> 40ms" },
-    { from: 'sin', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == HKG1<br><b>Estimated RTT Latency:</b> 40ms<hr><b>Link Name: </b>SIN1 == HKG3<br><b>Estimated RTT Latency:</b> 40ms" },
+    { from: 'sin', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == HKG1<br><b>Estimated RTT Latency:</b> 40ms" },
     { from: 'sin', to: 'tyo', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == TYO1<br><b>Estimated RTT Latency:</b> 90ms" },
     { from: 'sin', to: 'sjc', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == SJC1<br><b>Estimated RTT Latency:</b> 190ms" },
     { from: 'wds', to: 'can', style: {opacity: 0.8}, popup: "<b>Link Name: </b>WDS1 == CAN1<br><b>Estimated RTT Latency:</b> 60ms" },
     { from: 'ctu', to: 'wds', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CTU1 == WDS1<br><b>Estimated RTT Latency:</b> 50ms" },
     { from: 'sjc', to: 'dfw', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SJC1 == DFW1<br><b>Estimated RTT Latency:</b> 55ms" },
     { from: 'dfw', to: 'buf', style: {opacity: 0.8}, popup: "<b>Link Name: </b>DFW1 == BUF1<br><b>Estimated RTT Latency:</b> 90ms" },
-//    { from: 'sin', to: 'cgk', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == CGK1<br><b>Estimated RTT Latency:</b> 15ms" },
+    { from: 'sin', to: 'cgk', style: {opacity: 0.8}, popup: "<b>Link Name: </b>SIN1 == CGK1<br><b>Estimated RTT Latency:</b> 15ms" },
+    { from: 'hkg', to: 'cgk', style: {opacity: 0.8}, popup: "<b>Link Name: </b>HKG1 == CGK1<br><b>Estimated RTT Latency:</b> 42ms" },
     { from: 'wds', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>WDS1 == AZJ1<br><b>Estimated RTT Latency:</b> 40ms" },
     { from: 'ctu', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CTU1 == AZJ1<br><b>Estimated RTT Latency:</b> 50ms" },
     { from: 'can', to: 'azj', style: {opacity: 0.8}, popup: "<b>Link Name: </b>CAN1 == AZJ1<br><b>Estimated RTT Latency:</b> 35ms" },
@@ -88,5 +91,9 @@ var linkDefs = [
     { from: 'lhr', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>LHR1 == FRA1<br><b>Estimated RTT Latency:</b> 20ms" },
     { from: 'lhr', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>LHR1 == HKG1<br><b>Estimated RTT Latency:</b> 180ms" },
     { from: 'lhr', to: 'sin', style: {opacity: 0.8}, popup: "<b>Link Name: </b>LHR1 == SIN1<br><b>Estimated RTT Latency:</b> 150ms" },
-    { from: 'lhr', to: 'buf', style: {opacity: 0.8}, popup: "<b>Link Name: </b>LHR1 == BUF1<br><b>Estimated RTT Latency:</b> 90ms" }
+    { from: 'lhr', to: 'buf', style: {opacity: 0.8}, popup: "<b>Link Name: </b>LHR1 == BUF1<br><b>Estimated RTT Latency:</b> 90ms" },
+    { from: 'jnb', to: 'lhr', style: {opacity: 0.8}, popup: "<b>Link Name: </b>JNB1 == LHR1<br><b>Estimated RTT Latency:</b> 165ms" },
+    { from: 'jnb', to: 'fra', style: {opacity: 0.8}, popup: "<b>Link Name: </b>JNB1 == FRA1<br><b>Estimated RTT Latency:</b> 178ms" },
+    { from: 'jnb', to: 'hkg', style: {opacity: 0.8}, popup: "<b>Link Name: </b>JNB1 == HKG1<br><b>Estimated RTT Latency:</b> 350ms" },
+    { from: 'jnb', to: 'sin', style: {opacity: 0.8}, popup: "<b>Link Name: </b>JNB1 == SIN1<br><b>Estimated RTT Latency:</b> 310ms" }
 ];
